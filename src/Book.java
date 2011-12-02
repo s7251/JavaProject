@@ -5,7 +5,6 @@ public class Book {
 
 	private List<Subscriber> subscribers = new ArrayList<Subscriber>();
 
-
 	public void addSubscriber(Subscriber subscriber) {
 		subscribers.add(subscriber);
 	}
@@ -23,14 +22,15 @@ public class Book {
 			subscriber.getTelephone().printTelephone();
 		}
 	}
-        
-        public void printSubscriber() {
-            System.out.println("Subscribers:");
-            for(Subscriber subscriber : subscribers) {
-                Name name = subscriber.getName();
-                Telephone telephone = subscriber.getTelephone();
-                
-                System.out.println(name.getFirstname() + " " + name.getSurname() + " - " + telephone.getTelephone());
-            }
-        }
+
+	public void printSubscriber() {
+		System.out.println("Subscribers:");
+		for (Subscriber subscriber : subscribers) {
+			Name name = subscriber.getName();
+			Telephone telephone = subscriber.getTelephone();
+
+			System.out.println(name.getFirstname() + " " + name.getSurname()
+					+ " - " + telephone.getTelephone());
+		}
+	}
 }

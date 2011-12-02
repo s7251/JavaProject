@@ -1,26 +1,25 @@
-
 public class Subscriber {
-    private Name name;
-    private Telephone telephone;
-    
-    public Subscriber(Name name, Telephone telephone) {
-        this.name = name;
-        this.telephone = telephone;
-    }
+	private Name name;
+	private Telephone telephone;
 
-    public Name getName() {
-        return name;
-    }
+	public Subscriber(Name name, Telephone telephone) {
+		this.name = name;
+		this.telephone = telephone;
+	}
 
-    public void setName(Name name) {
-        this.name = name;
-    }
+	public Name getName() {
+		return name;
+	}
 
-    public Telephone getTelephone() {
-        return telephone;
-    }
+	public void setName(Name name) {
+		this.name = name;
+	}
 
-    public void setTelephone(Telephone telephone) {
-        this.telephone = telephone;
-    }
+	public Telephone getTelephone() {
+		return telephone;
+	}
+
+	public void setTelephone(Telephone telephone) {
+		this.telephone = telephone;
+	}
 }
