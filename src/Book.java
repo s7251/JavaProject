@@ -3,34 +3,34 @@ import java.util.List;
 
 public class Book {
 
-	private List<Name> names = new ArrayList<Name>();
-	private List<Telephone> telephones = new ArrayList<Telephone>();
+	private List<Subscriber> subscribers = new ArrayList<Subscriber>();
 
 
-	public void addName(String firstname, String surname) {
-		names.add(new Name(firstname, surname));
-
+	public void addSubscriber(Subscriber subscriber) {
+		subscribers.add(subscriber);
 	}
-
-	public void addTelephone(String telephone) {
-		telephones.add(new Telephone(telephone));
-
-	}
-	
 
 	public void printNames() {
-
 		System.out.println("Names:");
-		for (Name name : names) {
-			name.printName();
+		for (Subscriber subscriber : subscribers) {
+			subscriber.getName().printName();
 		}
 	}
 
 	public void printTelephones() {
-
 		System.out.println("Telephones:");
-		for (Telephone telephone : telephones) {
-			telephone.printTelephone();
+		for (Subscriber subscriber : subscribers) {
+			subscriber.getTelephone().printTelephone();
 		}
 	}
+        
+        public void printSubscriber() {
+            System.out.println("Subscribers:");
+            for(Subscriber subscriber : subscribers) {
+                Name name = subscriber.getName();
+                Telephone telephone = subscriber.getTelephone();
+                
+                System.out.println(name.getFirstname() + " " + name.getSurname() + " - " + telephone.getTelephone());
+            }
+        }
 }
