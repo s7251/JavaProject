@@ -18,6 +18,18 @@ public class Main {
 		book.printTelephones();
 		System.out.println("----------------------------");
 		book.printSubscriber();
+		
+		System.out.println("--------------------------------------------------------");
+		System.out.println("AFTER REMOVING:");
+		System.out.println("--------------------------------------------------------");
+		
+		
+		book.removeSubscriber(subscriber);
+		book.printNames();
+		System.out.println("----------------------------");
+		book.printTelephones();
+		System.out.println("----------------------------");
+		book.printSubscriber();
 
 	}
 
