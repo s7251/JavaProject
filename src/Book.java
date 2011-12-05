@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Book {
 
 	private List<Subscriber> subscribers = new ArrayList<Subscriber>();

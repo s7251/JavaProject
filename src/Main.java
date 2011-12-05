@@ -13,6 +13,24 @@ public class Main {
 		book.addSubscriber(subscriber);
 		book.addSubscriber(subscriber2);
 
+		System.out.println("--------------------------------------------------------");
+		System.out.println("AFTER ADDING:");
+		System.out.println("--------------------------------------------------------");
+		
+		book.printNames();
+		System.out.println("----------------------------");
+		book.printTelephones();
+		System.out.println("----------------------------");
+		book.printSubscriber();
+		
+		System.out.println("--------------------------------------------------------");
+		System.out.println("AFTER EDITING:");
+		System.out.println("--------------------------------------------------------");
+		
+		name.setFirstname("Mateusz");
+		name.setSurname("Podgorski");
+		telephone.setTelephone("0999888777");
+		
 		book.printNames();
 		System.out.println("----------------------------");
 		book.printTelephones();
