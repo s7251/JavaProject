@@ -35,16 +35,16 @@ public class Book {
 
 	public void printTelephones() {
 		System.out.println("Telephones:");
-		for (Subscriber subscriber : subscribers) {
-			subscriber.getTelephone().printTelephone();
+		for (Subscriber sub : subscribers) {
+			sub.getTelephone().printTelephone();
 		}
 	}
 
 	public void printSubscriber() {
 		System.out.println("Subscribers:");
-		for (Subscriber subscriber : subscribers) {
-			Name name = subscriber.getName();
-			Telephone telephone = subscriber.getTelephone();
+		for (Subscriber sub : subscribers) {
+			Name name = sub.getName();
+			Telephone telephone = sub.getTelephone();
 
 			System.out.println(name.getFirstname() + " " + name.getSurname()
 					+ " - " + telephone.getTelephone());
