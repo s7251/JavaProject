@@ -4,50 +4,52 @@ import java.util.List;
 
 public class Book {
 
-	private List<Subscriber> subscribers = new ArrayList<Subscriber>();
+	private List<PersonData> persondata = new ArrayList<PersonData>();
 
-	public void addSubscriber(Subscriber subscriber) {
-		subscribers.add(subscriber);
+	public void addPerson(PersonData person) {
+		persondata.add(person);
 	}
 
-	public void removeSubscriber(Subscriber subscriber) {
-		subscribers.remove(searchSubscriber(subscriber));
+	public void removePerson(PersonData person) {
+		persondata.remove(searchPerson(person));
 	}
 
-	public Subscriber searchSubscriber(Subscriber subscriber) {
+	public PersonData searchPerson(PersonData person) {
 		
-		String firstname = subscriber.getName().getFirstname();
-		String surname = subscriber.getName().getSurname();
-		String telephone = subscriber.getTelephone().getTelephone();
+		String firstname = person.getFirstName();
+		String surname = person.getSurname();
+		String telephone = person.getTelephone().getTelephone();
 		
-		for (Subscriber sub : subscribers) {
-			if (firstname.equals(sub.getName().getFirstname()) && surname.equals(sub.getName().getSurname()) && telephone.equals(sub.getTelephone().getTelephone()) )
+		for (PersonData sub : persondata) {
+			if (firstname.equals(sub.getFirstName()) && surname.equals(sub.getSurname()) && telephone.equals(sub.getTelephone().getTelephone()) )
 				return sub;
 		}
 		return null;
 	}
 
-	public void printNames() {
+	public void printNamesOfPersons() {
 		System.out.println("Names:");
-		for (Subscriber sub : subscribers) {
-			sub.getName().printName();
+		for (PersonData person : persondata) {
+								
+			System.out.println("firstname: " + person.getFirstName() + " surname: " + person.getSurname()) ;
 		}
 	}
 
-	public void printTelephones() {
+	public void printTelephonesOfPersons() {
 		System.out.println("Telephones:");
-		for (Subscriber sub : subscribers) {
-			sub.getTelephone().printTelephone();
+		for (PersonData person : persondata) {
+			
+			Telephone telephone = person.getTelephone();
+			System.out.println(telephone.getTelephone());
 		}
 	}
 
-	public void printSubscriber() {
-		System.out.println("Subscribers:");
-		for (Subscriber sub : subscribers) {
-			Name name = sub.getName();
-			Telephone telephone = sub.getTelephone();
-
-			System.out.println(name.getFirstname() + " " + name.getSurname()
+	public void printPersons() {
+		System.out.println("Persons:");
+		for (PersonData person : persondata) {
+			
+			Telephone telephone = person.getTelephone();
+			System.out.println(person.getFirstName() + " " + person.getSurname()
 					+ " - " + telephone.getTelephone());
 		}
 	}
