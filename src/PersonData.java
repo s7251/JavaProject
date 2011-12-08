@@ -2,8 +2,8 @@ public class PersonData {
 
 	private String firstName;
 	private String surname;
-    private Telephone telephone;
-    
+	private Telephone telephone;
+
 	public PersonData(String firstName, String surname, Telephone telephone) {
 		this.firstName = firstName;
 		this.surname = surname;

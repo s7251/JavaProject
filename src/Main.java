@@ -29,9 +29,9 @@ public class Main {
 		book.addPerson(person4);
 		book.addPerson(person5);
 		book.addPerson(person6);
-                    
-        BookPrinter bookPrinter = new BookPrinter(book);
-                
+
+		BookPrinter bookPrinter = new BookPrinter(book);
+
 		System.out.println("--------------------------------------------------------");
 		System.out.println("AFTER ADDING:");
 		System.out.println("--------------------------------------------------------");
