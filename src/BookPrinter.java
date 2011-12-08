@@ -1,8 +1,3 @@
-
-import java.util.ArrayList;
-import java.util.List;
-
-
 public class BookPrinter {
     
     private Book book;
@@ -11,15 +6,7 @@ public class BookPrinter {
         this.book = book;
     }
     
-    public void printPersonsByFirstname() {
-		for (PersonData person : book.getPersonsData()) {
-
-			System.out.println("firstname: " + person.getFirstName()
-					+ " surname: " + person.getSurname());
-		}
-	}
-	
-	public void printNamesOfPersons() {
+   	public void printNamesOfPersons() {
 		System.out.println("Names:");
 		for (PersonData person : book.getPersonsData()) {
 
@@ -46,4 +33,6 @@ public class BookPrinter {
 					+ person.getSurname() + " - " + telephone.getTelephone());
 		}
 	}
+	
+	
 }

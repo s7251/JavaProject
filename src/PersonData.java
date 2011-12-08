@@ -9,7 +9,6 @@ public class PersonData {
 		this.surname = surname;
 		this.telephone = telephone;
 	}
-
 		
 	public String getFirstName() {
 		return firstName;
