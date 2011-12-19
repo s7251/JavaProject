@@ -30,7 +30,7 @@ public class BookPrinter {
 
 			Telephone telephone = person.getTelephone();
 			System.out.println(person.getFirstName() + " "
-					+ person.getSurname() + " - " + telephone.getTelephone());
+				+ person.getSurname() + " - " + telephone.getTelephone());
 		}
 	}
 	
