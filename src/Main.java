@@ -14,10 +14,10 @@ public class Main {
 		PersonData person3 = new PersonData("Jan", "Janowski", telephone3);
 		
 		Telephone telephone4 = new Telephone("0400400400");
-		PersonData person4 = new PersonData("Bronisław", "Komorowski", telephone4);
+		PersonData person4 = new PersonData("Bronislaw", "Komorowski", telephone4);
 		
 		Telephone telephone5 = new Telephone("0500500500");
-		PersonData person5 = new PersonData("Bronisław", "Tusk", telephone5);
+		PersonData person5 = new PersonData("Bronislaw", "Tusk", telephone5);
 		
 		Telephone telephone6 = new Telephone("0600600600");
 		PersonData person6 = new PersonData("Borys", "Komorowski", telephone6);
@@ -88,7 +88,7 @@ public class Main {
 		List<PersonData> personsData3 = book.searchPersonBySurname(person4); 
 		Book newBookObject3 = new Book(personsData3); 
 		bookPrinter = new BookPrinter(newBookObject3); 
-	
+
 		bookPrinter.printNamesOfPersons();
 		System.out.println("----------------------------");
 		bookPrinter.printTelephonesOfPersons();
