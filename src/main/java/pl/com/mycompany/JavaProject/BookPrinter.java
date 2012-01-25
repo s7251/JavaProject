@@ -1,3 +1,4 @@
+package pl.com.mycompany.JavaProject;
 public class BookPrinter {
     
     private Book book;

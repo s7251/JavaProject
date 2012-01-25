@@ -1,3 +1,4 @@
+package pl.com.mycompany.JavaProject;
 public class PersonData {
 
 	private String firstName;

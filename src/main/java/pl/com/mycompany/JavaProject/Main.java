@@ -1,3 +1,4 @@
+package pl.com.mycompany.JavaProject;
 import java.util.List;
 
 public class Main {

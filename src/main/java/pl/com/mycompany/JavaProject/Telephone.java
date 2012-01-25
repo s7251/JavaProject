@@ -1,3 +1,4 @@
+package pl.com.mycompany.JavaProject;
 public class Telephone {
 
 	private String telephone;
