@@ -1,4 +1,4 @@
-package pl.com.mycompany.JavaProject;
+package pl.com.mycompany.javaproject;
 import java.util.List;
 
 public class Main {

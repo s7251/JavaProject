@@ -1,4 +1,4 @@
-package pl.com.mycompany.JavaProject;
+package pl.com.mycompany.javaproject;
 public class BookPrinter {
     
     private Book book;
