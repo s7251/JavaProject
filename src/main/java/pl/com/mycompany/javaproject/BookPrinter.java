@@ -9,7 +9,7 @@ public class BookPrinter {
     
    	public void printNamesOfPersons() {
 		System.out.println("Names:");
-		for (PersonData person : book.getPersonsData()) {
+		for (Person person : book.getPersonsData()) {
 
 			System.out.println("firstname: " + person.getFirstName()
 					+ " surname: " + person.getSurname());
@@ -18,7 +18,7 @@ public class BookPrinter {
 
 	public void printTelephonesOfPersons() {
 		System.out.println("Telephones:");
-		for (PersonData person : book.getPersonsData()) {
+		for (Person person : book.getPersonsData()) {
 
 			Telephone telephone = person.getTelephone();
 			System.out.println(telephone.getTelephone());
@@ -27,7 +27,7 @@ public class BookPrinter {
 
 	public void printPersons() {
 		System.out.println("Persons:");
-		for (PersonData person : book.getPersonsData()) {
+		for (Person person : book.getPersonsData()) {
 
 			Telephone telephone = person.getTelephone();
 			System.out.println(person.getFirstName() + " "

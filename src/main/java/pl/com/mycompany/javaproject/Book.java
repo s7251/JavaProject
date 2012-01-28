@@ -4,34 +4,34 @@ import java.util.List;
 
 public class Book {
 
-	private List<PersonData> personsData = new ArrayList<PersonData>();
+	private List<Person> personsData = new ArrayList<Person>();
 
 	public Book() {
 	}
 
-	public Book(List<PersonData> personsData) {
+	public Book(List<Person> personsData) {
 		this.personsData = personsData;
 	};
 
-	public List<PersonData> getPersonsData() {
+	public List<Person> getPersonsData() {
 		return personsData;
 	}
 	
-	public void addPerson(PersonData person) {
+	public void addPerson(Person person) {
 		getPersonsData().add(person);
 	}
 
-	public void removePerson(PersonData person) {
+	public void removePerson(Person person) {
 		getPersonsData().remove(searchPerson(person));
 	}
 
-	public PersonData searchPerson(PersonData person) {
+	public Person searchPerson(Person person) {
 
 		String firstname = person.getFirstName();
 		String surname = person.getSurname();
 		String telephone = person.getTelephone().getTelephone();
 
-		for (PersonData sub : getPersonsData()) {
+		for (Person sub : getPersonsData()) {
 			if (firstname.equals(sub.getFirstName())
 					&& surname.equals(sub.getSurname())
 					&& telephone.equals(sub.getTelephone().getTelephone()))
@@ -40,12 +40,12 @@ public class Book {
 		return null;
 	}
 
-	public List<PersonData> searchPersonByFirstName(PersonData person) {
+	public List<Person> searchPersonByFirstName(Person person) {
 
-		List<PersonData> personData2 = new ArrayList<PersonData>();
+		List<Person> personData2 = new ArrayList<Person>();
 		String firstname = person.getFirstName();
 
-		for (PersonData sub : getPersonsData()) {
+		for (Person sub : getPersonsData()) {
 			if (firstname.equals(sub.getFirstName()))
 				personData2.add(sub);
 
@@ -53,12 +53,12 @@ public class Book {
 		return personData2;
 	}
 	
-	public List<PersonData> searchPersonBySurname(PersonData person) {
+	public List<Person> searchPersonBySurname(Person person) {
 
-		List<PersonData> personData3 = new ArrayList<PersonData>();
+		List<Person> personData3 = new ArrayList<Person>();
 		String surname = person.getSurname();
 
-		for (PersonData sub : getPersonsData()) {
+		for (Person sub : getPersonsData()) {
 			if (surname.equals(sub.getSurname()))
 				personData3.add(sub);
 

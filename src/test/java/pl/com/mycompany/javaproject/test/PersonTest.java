@@ -1,15 +1,16 @@
 package pl.com.mycompany.javaproject.test;
 
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.junit.Before;
 import org.junit.Test;
-import pl.com.mycompany.javaproject.model.Book;
+import pl.com.mycompany.javaproject.model.Person;
 import pl.com.mycompany.javaproject.util.HibernateUtil;
 
 
-public class BookTest {
+public class PersonTest {
     
     private Session session;
     
@@ -18,17 +19,14 @@ public class BookTest {
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
         session = sessionFactory.getCurrentSession();
     }
-
+    
     @Test
-    public void blogPersist() {
+    public void commentPersist() {
         Transaction tx = session.beginTransaction();
-
-        Book b = new Book();
-        b.setSubject("Temat bloga");
-        b.setHeader("Naglowek bloga");
         
-        session.save(b);
-
+        Person person = new Person();
+        session.save(person);
+        
         tx.commit();
     }
 }

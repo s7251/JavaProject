@@ -1,11 +1,11 @@
 package pl.com.mycompany.javaproject;
-public class PersonData {
+public class Person {
 
 	private String firstName;
 	private String surname;
 	private Telephone telephone;
 
-	public PersonData(String firstName, String surname, Telephone telephone) {
+	public Person(String firstName, String surname, Telephone telephone) {
 		this.firstName = firstName;
 		this.surname = surname;
 		this.telephone = telephone;

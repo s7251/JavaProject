@@ -6,22 +6,22 @@ public class Main {
 
 		
 		Telephone telephone1 = new Telephone("0100200300");
-		PersonData person1 = new PersonData("Jan", "Kowalski", telephone1);
+		Person person1 = new Person("Jan", "Kowalski", telephone1);
 				
 		Telephone telephone2 = new Telephone("0200200200");
-		PersonData person2 = new PersonData("Jan", "Kulas", telephone2);
+		Person person2 = new Person("Jan", "Kulas", telephone2);
 
 		Telephone telephone3 = new Telephone("0300300300");
-		PersonData person3 = new PersonData("Jan", "Janowski", telephone3);
+		Person person3 = new Person("Jan", "Janowski", telephone3);
 		
 		Telephone telephone4 = new Telephone("0400400400");
-		PersonData person4 = new PersonData("Bronislaw", "Komorowski", telephone4);
+		Person person4 = new Person("Bronislaw", "Komorowski", telephone4);
 		
 		Telephone telephone5 = new Telephone("0500500500");
-		PersonData person5 = new PersonData("Bronislaw", "Tusk", telephone5);
+		Person person5 = new Person("Bronislaw", "Tusk", telephone5);
 		
 		Telephone telephone6 = new Telephone("0600600600");
-		PersonData person6 = new PersonData("Borys", "Komorowski", telephone6);
+		Person person6 = new Person("Borys", "Komorowski", telephone6);
 		
 		Book book = new Book();
 		book.addPerson(person1);
@@ -72,7 +72,7 @@ public class Main {
 		System.out.println("PERSONS BY FIRSTNAME:");
 		System.out.println("--------------------------------------------------------");
 		
-		List<PersonData> personsData2 = book.searchPersonByFirstName(person4); 
+		List<Person> personsData2 = book.searchPersonByFirstName(person4); 
 		Book newBookObject2 = new Book(personsData2); 
 		bookPrinter = new BookPrinter(newBookObject2); 
 	
@@ -86,7 +86,7 @@ public class Main {
 		System.out.println("PERSONS BY SURNAME:");
 		System.out.println("--------------------------------------------------------");
 		
-		List<PersonData> personsData3 = book.searchPersonBySurname(person4); 
+		List<Person> personsData3 = book.searchPersonBySurname(person4); 
 		Book newBookObject3 = new Book(personsData3); 
 		bookPrinter = new BookPrinter(newBookObject3); 
 

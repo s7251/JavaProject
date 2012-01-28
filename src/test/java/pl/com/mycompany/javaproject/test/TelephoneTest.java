@@ -5,11 +5,11 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.junit.Before;
 import org.junit.Test;
-import pl.com.mycompany.javaproject.model.Book;
+import pl.com.mycompany.javaproject.model.Telephone;
 import pl.com.mycompany.javaproject.util.HibernateUtil;
 
 
-public class BookTest {
+public class TelephoneTest {
     
     private Session session;
     
@@ -18,17 +18,14 @@ public class BookTest {
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
         session = sessionFactory.getCurrentSession();
     }
-
+    
     @Test
-    public void blogPersist() {
+    public void postPersist() {
         Transaction tx = session.beginTransaction();
-
-        Book b = new Book();
-        b.setSubject("Temat bloga");
-        b.setHeader("Naglowek bloga");
         
-        session.save(b);
-
+        Telephone telephone = new Telephone();
+        session.save(telephone);
+        
         tx.commit();
     }
 }
