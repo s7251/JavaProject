@@ -24,7 +24,8 @@ public class PersonTest {
     public void commentPersist() {
         Transaction tx = session.beginTransaction();
         
-        Person person = new Person();
+             
+        Person person = new Person("Krystian", "Kulas", telephone);
         session.save(person);
         
         tx.commit();

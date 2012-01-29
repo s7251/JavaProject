@@ -5,8 +5,10 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.junit.Before;
 import org.junit.Test;
-import pl.com.mycompany.javaproject.model.Telephone;
+
+import pl.com.mycompany.javaproject.model.Telephone; 
 import pl.com.mycompany.javaproject.util.HibernateUtil;
+
 
 
 public class TelephoneTest {
@@ -23,7 +25,7 @@ public class TelephoneTest {
     public void postPersist() {
         Transaction tx = session.beginTransaction();
         
-        Telephone telephone = new Telephone();
+        Telephone telephone = new Telephone("0700 :P");
         session.save(telephone);
         
         tx.commit();
