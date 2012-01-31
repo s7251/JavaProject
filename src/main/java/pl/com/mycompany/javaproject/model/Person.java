@@ -20,11 +20,14 @@ public class Person implements Serializable {
 	private Long id;
 	private Book book;
 	
+		
 	
 	public Person(String firstName, String surname, Telephone telephone) {
 		this.firstName = firstName;
 		this.surname = surname;
 		this.telephone = telephone;
+		
+		telephone.setPerson(this);
 	}
     @Id
     @GeneratedValue

@@ -23,13 +23,13 @@ public class PersonTest {
     }
     
     @Test
-    public void commentPersist() {
-        Transaction tx = session.beginTransaction();
-        
-        Telephone telephone = new Telephone("123123123");     
-        Person person = new Person("Krystian", "Kulas", telephone);
-        session.save(person);
-        
-        tx.commit();
+    public void personPersist() {
+    	  Transaction tx = session.beginTransaction();
+          
+          Telephone telephone = new Telephone("123123123");     
+          Person person = new Person("Krystian", "Kulas", telephone);
+          session.save(person);
+          
+          tx.commit();
     }
 }

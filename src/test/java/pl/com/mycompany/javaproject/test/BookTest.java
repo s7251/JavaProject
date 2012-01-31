@@ -5,8 +5,10 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.junit.Before;
 import org.junit.Test;
+
 import pl.com.mycompany.javaproject.model.Book;
 import pl.com.mycompany.javaproject.util.HibernateUtil;
+import pl.com.mycompany.javaproject.util.InitDataBase;
 
 
 public class BookTest {
@@ -15,12 +17,15 @@ public class BookTest {
     
     @Before
     public void setUp() {
+    	InitDataBase initDataBase = new InitDataBase();
+    	initDataBase.init();
+    	
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
         session = sessionFactory.getCurrentSession();
     }
 
     @Test
-    public void blogPersist() {
+    public void bookPersist() {
         Transaction tx = session.beginTransaction();
 
         Book b = new Book();

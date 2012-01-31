@@ -39,6 +39,7 @@ public class Book implements Serializable {
 	
 	public void addPerson(Person person) {
 		getPersonsData().add(person);
+		person.setBook(this);
 	}
 
 	public void removePerson(Person person) {
