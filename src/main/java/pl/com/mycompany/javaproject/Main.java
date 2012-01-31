@@ -1,6 +1,10 @@
 package pl.com.mycompany.javaproject;
 import java.util.List;
 
+import pl.com.mycompany.javaproject.model.Book;
+import pl.com.mycompany.javaproject.model.Person;
+import pl.com.mycompany.javaproject.model.Telephone;
+
 public class Main {
 	public static void main(String[] args) {
 

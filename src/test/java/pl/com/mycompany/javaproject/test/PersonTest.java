@@ -6,7 +6,9 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.junit.Before;
 import org.junit.Test;
+
 import pl.com.mycompany.javaproject.model.Person;
+import pl.com.mycompany.javaproject.model.Telephone;
 import pl.com.mycompany.javaproject.util.HibernateUtil;
 
 
@@ -24,7 +26,7 @@ public class PersonTest {
     public void commentPersist() {
         Transaction tx = session.beginTransaction();
         
-             
+        Telephone telephone = new Telephone("123123123");     
         Person person = new Person("Krystian", "Kulas", telephone);
         session.save(person);
         

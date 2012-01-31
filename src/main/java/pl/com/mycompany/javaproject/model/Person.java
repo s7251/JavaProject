@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-import pl.com.mycompany.javaproject.Telephone;
+import pl.com.mycompany.javaproject.model.Telephone;
 
 @Entity
 public class Person implements Serializable {

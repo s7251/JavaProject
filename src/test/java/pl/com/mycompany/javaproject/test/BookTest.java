@@ -24,8 +24,7 @@ public class BookTest {
         Transaction tx = session.beginTransaction();
 
         Book b = new Book();
-        b.setSubject("Temat bloga");
-        b.setHeader("Naglowek bloga");
+       
         
         session.save(b);
 
