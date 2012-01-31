@@ -1,9 +1,12 @@
 package pl.com.mycompany.javaproject.model;
 
 import java.io.Serializable;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Telephone implements Serializable {
@@ -12,6 +15,16 @@ public class Telephone implements Serializable {
 
 	private Long id;
 	private String telephone;
+	private Person person;
+	
+	@OneToOne(cascade=CascadeType.ALL)
+	public Person getPerson() {
+		return person;
+	}
+
+	public void setPerson(Person person) {
+		this.person = person;
+	}
 
 	public Telephone(String telephone) { 
 		this.telephone = telephone;

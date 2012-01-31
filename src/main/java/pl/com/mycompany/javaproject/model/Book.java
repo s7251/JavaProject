@@ -7,6 +7,7 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Book implements Serializable {
@@ -30,7 +31,8 @@ public class Book implements Serializable {
 	public void setId(Long id) {
 		this.id = id;
 	}
-
+	
+	@OneToMany(mappedBy="book")
 	public List<Person> getPersonsData() {
 		return personsData;
 	}
