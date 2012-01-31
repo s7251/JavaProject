@@ -1,4 +1,3 @@
-
 package pl.com.mycompany.javaproject.util;
 
 import org.hibernate.SessionFactory;
