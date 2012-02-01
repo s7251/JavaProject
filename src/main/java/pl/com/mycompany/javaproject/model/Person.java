@@ -20,7 +20,7 @@ public class Person implements Serializable {
 	private Long id;
 	private Book book;
 	
-		
+	protected Person() {}
 	
 	public Person(String firstName, String surname, Telephone telephone) {
 		this.firstName = firstName;

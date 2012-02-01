@@ -26,6 +26,8 @@ public class Telephone implements Serializable {
 		this.person = person;
 	}
 
+	protected Telephone() {}
+	
 	public Telephone(String telephone) { 
 		this.telephone = telephone;
 	}

@@ -1,9 +1,14 @@
 package pl.com.mycompany.javaproject;
 import java.util.List;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
 import pl.com.mycompany.javaproject.model.Book;
 import pl.com.mycompany.javaproject.model.Person;
 import pl.com.mycompany.javaproject.model.Telephone;
+import pl.com.mycompany.javaproject.util.HibernateUtil;
 
 public class Main {
 	public static void main(String[] args) {
@@ -35,6 +40,27 @@ public class Main {
 		book.addPerson(person5);
 		book.addPerson(person6);
 
+		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+		Session session = sessionFactory.getCurrentSession();
+		
+		Transaction tx = session.beginTransaction();
+		
+		session.save(book);
+		session.save(person1);
+		session.save(person2);
+		session.save(person3);
+		session.save(person4);
+		session.save(person5);
+		session.save(person6);
+		session.save(telephone1);
+		session.save(telephone2);
+		session.save(telephone3);
+		session.save(telephone4);
+		session.save(telephone5);
+		session.save(telephone6);
+		
+		tx.commit();
+		
 		BookPrinter bookPrinter = new BookPrinter(book);
 
 		System.out.println("--------------------------------------------------------");

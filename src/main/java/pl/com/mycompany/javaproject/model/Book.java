@@ -9,6 +9,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import pl.com.mycompany.javaproject.util.HibernateUtil;
+
 @Entity
 public class Book implements Serializable {
 
@@ -50,14 +57,29 @@ public class Book implements Serializable {
     public void removePerson(Person person) {
         getPersons().remove(searchPerson(person));
     }
+    
+    @SuppressWarnings("unchecked")
+    private List<Person> loadPersonsFormDB() {
+    	SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+		Session session = sessionFactory.getCurrentSession();
+		
+    	Transaction tx = session.beginTransaction();
 
+		Criteria criteria = session.createCriteria(Person.class);
+		List<Person> persons = criteria.list();
+
+		tx.commit();
+    	
+    	return persons;
+    }
+    
     public Person searchPerson(Person person) {
 
         String firstname = person.getFirstName();
         String surname = person.getSurname();
         String telephone = person.getTelephone().getTelephone();
 
-        for (Person sub : getPersons()) {
+        for (Person sub : loadPersonsFormDB()) {
             if (firstname.equals(sub.getFirstName())
                     && surname.equals(sub.getSurname())
                     && telephone.equals(sub.getTelephone().getTelephone())) {
@@ -72,7 +94,7 @@ public class Book implements Serializable {
         List<Person> personData2 = new ArrayList<Person>();
         String firstname = person.getFirstName();
 
-        for (Person sub : getPersons()) {
+        for (Person sub : loadPersonsFormDB()) {
             if (firstname.equals(sub.getFirstName())) {
                 personData2.add(sub);
             }
@@ -86,7 +108,7 @@ public class Book implements Serializable {
         List<Person> personData3 = new ArrayList<Person>();
         String surname = person.getSurname();
 
-        for (Person sub : getPersons()) {
+        for (Person sub : loadPersonsFormDB()) {
             if (surname.equals(sub.getSurname())) {
                 personData3.add(sub);
             }

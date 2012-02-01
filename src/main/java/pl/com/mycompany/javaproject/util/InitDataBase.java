@@ -3,6 +3,7 @@ package pl.com.mycompany.javaproject.util;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
 
 import pl.com.mycompany.javaproject.model.Book;
 import pl.com.mycompany.javaproject.model.Person;
@@ -10,9 +11,9 @@ import pl.com.mycompany.javaproject.model.Telephone;
 
 public class InitDataBase {
 
-	public void init() {
-		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
-		Session session = sessionFactory.getCurrentSession();
+	public Session init() {
+		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        Session session = sessionFactory.getCurrentSession();
 
 		Transaction tx = session.beginTransaction();
 		
@@ -26,6 +27,8 @@ public class InitDataBase {
 		session.save(person);
 		
 		tx.commit();
+		
+		return sessionFactory.getCurrentSession();
 
 	};
 }
