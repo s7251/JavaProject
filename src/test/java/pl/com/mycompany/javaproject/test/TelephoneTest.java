@@ -51,6 +51,8 @@ public class TelephoneTest {
 	public void testGetTelephone() {
 		Telephone telephone = new Telephone("123");
 		telephone.setTelephone("123123123");
-		assertEquals("123123123", telephone.getTelephone());
+		assertEquals("123123123", telephone.getTelephone()); 
+		assertTrue("123123123".equals(telephone.getTelephone()));
+		assertNotNull(telephone.getTelephone());
 	}
 }
