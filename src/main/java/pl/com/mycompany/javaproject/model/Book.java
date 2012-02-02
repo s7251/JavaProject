@@ -14,6 +14,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
+import pl.com.mycompany.javaproject.exception.PersistedObjectIsNullException;
 import pl.com.mycompany.javaproject.util.HibernateUtil;
 
 @Entity
@@ -49,7 +50,8 @@ public class Book implements Serializable {
         this.persons = persons;
     }
 
-    public void addPerson(Person person) {
+    public void addPerson(Person person) throws PersistedObjectIsNullException {
+        if(person == null) { throw new PersistedObjectIsNullException(); }
         getPersons().add(person);
         person.setBook(this);
     }

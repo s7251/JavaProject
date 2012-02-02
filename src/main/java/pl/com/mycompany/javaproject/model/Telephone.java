@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import pl.com.mycompany.javaproject.exception.TelephoneNumberException;
 
 @Entity
 public class Telephone implements Serializable {
@@ -28,7 +29,8 @@ public class Telephone implements Serializable {
 
 	protected Telephone() {}
 	
-	public Telephone(String telephone) { 
+	public Telephone(String telephone) throws TelephoneNumberException {
+            if(telephone == null) { throw new TelephoneNumberException(); }
 		this.telephone = telephone;
 	}
 
